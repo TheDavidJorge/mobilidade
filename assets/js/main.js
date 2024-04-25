@@ -35,6 +35,32 @@
     }
   }
 
+    // Função para maximizar a imagem ao clicar
+    function maximizarImagem() {
+      var imagem = document.getElementById('imagem');
+      imagem.style.width = '100%';
+      imagem.style.height = '100%';
+      imagem.style.position = 'fixed';
+      imagem.style.top = '0';
+      imagem.style.left = '0';
+      imagem.style.zIndex = '9999';
+      imagem.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      imagem.style.cursor = 'zoom-out';
+      imagem.setAttribute('onclick', 'minimizarImagem()');
+    }
+
+    // Função para minimizar a imagem ao clicar novamente
+    function minimizarImagem() {
+      var imagem = document.getElementById('imagem');
+      imagem.style.width = 'auto';
+      imagem.style.height = 'auto';
+      imagem.style.position = 'static';
+      imagem.style.zIndex = 'auto';
+      imagem.style.backgroundColor = 'transparent';
+      imagem.style.cursor = 'pointer';
+      imagem.setAttribute('onclick', 'maximizarImagem()');
+    }
+
   /**
    * Easy on scroll event listener 
    */
